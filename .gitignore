@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+build/
+
+.env*.local
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+
+# Internal hiring tooling — kept local, never shipped to candidate copies
+/scripts/

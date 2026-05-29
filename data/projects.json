@@ -1,0 +1,23 @@
+[
+  {
+    "id": "coastal-refuge",
+    "title": "Coastal Refuge",
+    "location": "Cannon Beach, OR",
+    "year": 2024,
+    "image": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "alameda-rowhouse",
+    "title": "Alameda Rowhouse",
+    "location": "Portland, OR",
+    "year": 2024,
+    "image": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "north-cascades-cabin",
+    "title": "North Cascades Cabin",
+    "location": "Mazama, WA",
+    "year": 2023,
+    "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=80"
+  }
+]
