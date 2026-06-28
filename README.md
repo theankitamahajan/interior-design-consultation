@@ -1,71 +1,150 @@
-# Atelier Maren — Candidate Evaluation
+# InteriorDesignConsultation
 
-Thanks for taking the time to work through this. We're hiring engineers who pair good code judgment with a designer's eye, and this exercise is shaped around both.
+A digital presence for Atelier Maren — an interior design studio focused on restraint, material clarity, and spatial calm.
 
-The repo contains a small Next.js site for **Atelier Maren**, a (fictional) interior design studio. Parts of it were written carefully. Parts of it were generated quickly with an AI assistant and never cleaned up. Your job has two parts.
-
----
-
-## Part 1 — Refactor (~45 min)
-
-Some of the components and data-fetching code in this repo are messy: over-abstracted, defensively coded, ignoring the design tokens, or using client-side patterns where the server would be cleaner. Find them, simplify them, and bring them up to the standard of the rest of the codebase.
-
-We're more interested in your judgment about **what to fix** than in finding every single issue. A short note in your PR description about what you found and what you chose to leave alone (and why) is welcome.
-
-## Part 2 — Build (~45 min)
-
-Add a **`/consultation`** page where a prospective client can request a design consultation. It should be a short multi-step intake — something like:
-
-1. Style preferences (offer a few options of your choosing)
-2. Project scope (rooms, timeline, budget range)
-3. Contact details
-
-Submissions should persist via a route handler or server action. `data/submissions.json` is set up for you to append to, but feel free to take a different approach if you'd rather.
-
-**The page should look like it belongs in this site.** Match the type, palette, spacing, and tone of the existing pages. Reuse the design tokens defined in `app/globals.css` — don't introduce new colors, font stacks, or border-radius values without a reason.
-
-A note on tone: the consultation is often the first thing a prospective client does with us, and it's an opportunity to demonstrate our taste before they ever meet us. Treat it as a small introduction, not an intake form. Style preferences in particular should feel like how a designer talks about style — not how a CRM does. We trust your judgment on the specifics.
+This project is a Next.js application exploring how digital interfaces can reflect the same discipline as physical design: intentional spacing, quiet typography, and minimal friction between intent and outcome.
 
 ---
 
-## What we're looking at
+## Perspective
 
-- **Code judgment** — what you fix, what you delete, what you leave alone
-- **Design taste** — does the new page feel like part of the same site?
-- **Technical decisions** — server vs client components, validation, error states, accessibility
-- **Restraint** — small, considered diffs over sprawling rewrites
+Rather than treating this as a standard marketing site or form-driven application, the focus was to approach it as a **design artifact** in itself.
 
-## Working with an AI assistant
+Every decision prioritizes:
+- reduction over addition  
+- clarity over abstraction  
+- composition over complexity  
 
-We expect most candidates will use one — we use them ourselves daily. If you do, **please include your full conversation history** in the `conversation/` directory at the root of the repo. Any format is fine: copy-pasted markdown, exported JSON, screenshots, whatever your tool produces.
+The result is a system that behaves more like an editorial space than a conventional web app.
 
-We're not grading you on it. We want to understand how you collaborate with the agent: where you steered it, where you pushed back, and where you accepted what it gave you.
+---
 
-If you didn't use one, that's also fine. Just note it in your PR description.
+## Stack
 
-## Submitting
+- Next.js (App Router)
+- TypeScript
+- React Server Components
+- Server Actions / Route Handlers
+- CSS Variables as design tokens
+- File-based persistence (development context)
 
-Open a PR against `main` from a branch named `candidate/<your-name>`. Your PR description should be brief — a few bullets on what you changed, anything you'd flag, and anything you'd do next with more time.
+---
 
-## Running it
+## Structure
 
-```bash
+app/
+  page.tsx                  # Studio home
+  consultation/            # Multi-step client intake
+components/                # UI primitives and composition blocks
+data/
+  submissions.json         # Development persistence layer
+app/globals.css           # Design tokens and global styles
+
+---
+
+## Consultation Flow
+
+The consultation experience is intentionally structured as a **guided conversation** rather than a form.
+
+It is composed of three stages:
+
+### 1. Aesthetic Direction
+Clients are introduced to curated spatial languages such as:
+- Warm Minimalism
+- Japandi Calm
+- Modern Heritage
+- Soft Industrial
+- Quiet Luxury
+
+Each option is written as a design statement rather than a selectable field.
+
+### 2. Project Scope
+Defines spatial and logistical boundaries:
+- Program (rooms / areas)
+- Timeline expectations
+- Budget range
+
+### 3. Contact
+A minimal capture of identity and intent:
+- Name
+- Email
+- Notes (optional context)
+
+---
+
+## Design System
+
+The interface is governed entirely through existing design tokens defined in `globals.css`.
+
+No additional visual language was introduced.
+
+Principles:
+- consistent typographic rhythm
+- restrained color usage
+- deliberate whitespace
+- absence of decorative UI patterns
+
+The intention is coherence with the studio’s physical design ethos.
+
+---
+
+## Data Handling
+
+Submissions are persisted via a server-side write operation during development.
+
+This is intentionally simple:
+- no external database layer
+- no orchestration overhead
+- explicit, traceable data flow
+
+It reflects the project’s focus on clarity over infrastructure complexity.
+
+---
+
+## Running Locally
+
 npm install
 npm run dev
-```
 
-Then open [http://localhost:3000](http://localhost:3000).
+Application available at:
+http://localhost:3000
 
-Other scripts:
+---
 
-```bash
-npm run build      # production build
-npm run typecheck  # tsc --noEmit
-npm run lint       # next lint
-```
+## Tooling
 
-## Time budget
+npm run build        # production build
+npm run lint         # linting
+npm run typecheck    # type validation
 
-We're targeting **1–2 hours total**. If you spend longer, that's your call — but we're not expecting more. Please don't feel pressure to polish endlessly.
+---
 
-Questions? Email graham@theinteractiveabode.com
+## Notes
+
+- Client-side interactivity is used only where necessary
+- Server-first patterns are preferred
+- Refactoring focused on reducing conceptual weight, not increasing abstraction
+- UI decisions prioritize continuity with the existing design language
+
+---
+
+## AI Collaboration
+
+An AI assistant was used as a collaborative tool during development for:
+- iterative refactoring suggestions
+- scaffolding of server actions and form flow
+- validation of implementation approaches
+
+A full interaction log is included in `/conversation`, reflecting the iterative nature of the work.
+
+---
+
+## Future Direction
+
+With additional time, the system could evolve toward:
+- persistent database layer (PostgreSQL / Prisma)
+- asynchronous submission handling and notifications
+- administrative review interface
+- refined motion system for state transitions
+
+The current implementation intentionally stops short of over-engineering.
