@@ -1,4 +1,4 @@
-# InteriorDesignConsultation
+# InteriorDesignConsultation 
 
 A digital presence for Atelier Maren — an interior design studio focused on restraint, material clarity, and spatial calm.
 
