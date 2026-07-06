@@ -8,7 +8,7 @@
   letter-spacing: 0.04em;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: all var(--transition);
+  transition: all var(--transition);  
   white-space: nowrap;
 }
 
